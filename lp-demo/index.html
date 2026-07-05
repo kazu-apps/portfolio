@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みどり整体院｜肩こり・腰痛専門の整体（デモサイト）</title>
+<meta name="description" content="慢性的な肩こり・腰痛でお悩みの方へ。国家資格者による丁寧な施術。初回限定2,980円。※これはポートフォリオ用のデモサイトです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2e7d5b;
+    --green-dark: #1f5c42;
+    --green-light: #e8f3ee;
+    --accent: #e8842c;
+    --accent-dark: #c96d1a;
+    --text: #2b2b2b;
+    --muted: #6b7570;
+    --bg: #fdfcfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  img { max-width: 100%; }
+  .inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 72px 0; }
+  .section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: var(--green-dark);
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 48px;
+    letter-spacing: .1em;
+  }
+
+  /* ヘッダー */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #e5e2dc;
+  }
+  .header-inner {
+    max-width: 1000px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-weight: 900; font-size: 20px; color: var(--green-dark); text-decoration: none; }
+  .logo span { font-size: 11px; font-weight: 500; color: var(--muted); display: block; letter-spacing: .15em; }
+  .header-cta {
+    background: var(--accent); color: #fff; text-decoration: none;
+    padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px;
+    transition: background .2s;
+  }
+  .header-cta:hover { background: var(--accent-dark); }
+
+  /* ヒーロー */
+  .hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 85% 20%, rgba(46,125,91,.14), transparent),
+      linear-gradient(160deg, var(--green-light) 0%, #f6faf8 55%, #fdfcfa 100%);
+    padding: 88px 0 72px;
+  }
+  .hero-inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .hero-badge {
+    display: inline-block; background: var(--green); color: #fff;
+    font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 999px;
+    margin-bottom: 20px; letter-spacing: .05em;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 900; line-height: 1.4; color: var(--green-dark);
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { font-size: 16px; color: var(--muted); max-width: 560px; margin-bottom: 32px; }
+  .cta-btn {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    font-size: 18px; font-weight: 900; padding: 18px 48px; border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(232,132,44,.35);
+    transition: transform .15s, background .2s;
+  }
+  .cta-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .cta-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  /* お悩み */
+  .problems { background: #fff; }
+  .problem-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .problem-item {
+    background: var(--green-light); border-radius: 12px; padding: 20px 24px;
+    display: flex; align-items: center; gap: 14px; font-weight: 500;
+  }
+  .problem-item::before { content: "✓"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--green); color: #fff; display: grid; place-items: center; font-size: 14px; font-weight: 900; }
+  .problems-lead {
+    text-align: center; margin-top: 40px; font-size: 20px; font-weight: 700; color: var(--green-dark);
+  }
+  .problems-lead strong { color: var(--accent); font-size: 24px; }
+
+  /* 特徴 */
+  .features { background: linear-gradient(180deg, var(--bg), var(--green-light) 140%); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .feature-card {
+    background: #fff; border-radius: 16px; padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(31,92,66,.08);
+  }
+  .feature-num { font-size: 13px; font-weight: 900; color: var(--accent); letter-spacing: .15em; }
+  .feature-card h3 { font-size: 19px; color: var(--green-dark); margin: 8px 0 12px; }
+  .feature-card p { font-size: 14px; color: var(--muted); }
+
+  /* 料金 */
+  .pricing { background: #fff; }
+  .price-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 820px; margin: 0 auto; }
+  .price-card {
+    border: 2px solid #e5e2dc; border-radius: 16px; padding: 32px 28px; text-align: center;
+    position: relative; background: #fff;
+  }
+  .price-card.featured { border-color: var(--accent); box-shadow: 0 8px 32px rgba(232,132,44,.15); }
+  .price-tag {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 900;
+    padding: 4px 18px; border-radius: 999px; white-space: nowrap;
+  }
+  .price-card h3 { font-size: 17px; color: var(--green-dark); margin-bottom: 16px; }
+  .price-old { color: var(--muted); text-decoration: line-through; font-size: 14px; }
+  .price-now { font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1.2; }
+  .price-now small { font-size: 16px; }
+  .price-card p { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+  /* お客様の声 */
+  .voices { background: var(--green-light); }
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .voice-card { background: #fff; border-radius: 16px; padding: 28px; }
+  .voice-stars { color: #f5a623; letter-spacing: 2px; margin-bottom: 10px; }
+  .voice-card p { font-size: 14px; margin-bottom: 14px; }
+  .voice-meta { font-size: 13px; color: var(--muted); font-weight: 700; }
+
+  /* FAQ */
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  details {
+    background: #fff; border: 1px solid #e5e2dc; border-radius: 12px;
+    padding: 18px 22px; margin-bottom: 12px;
+  }
+  summary { font-weight: 700; cursor: pointer; color: var(--green-dark); list-style: none; position: relative; padding-right: 28px; }
+  summary::after { content: "＋"; position: absolute; right: 0; top: 0; color: var(--accent); font-weight: 900; }
+  details[open] summary::after { content: "－"; }
+  details p { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+  /* アクセス */
+  .access { background: #fff; }
+  .access-table { max-width: 640px; margin: 0 auto; width: 100%; border-collapse: collapse; }
+  .access-table th, .access-table td { padding: 14px 12px; border-bottom: 1px solid #e5e2dc; font-size: 14px; text-align: left; }
+  .access-table th { width: 32%; color: var(--green-dark); }
+
+  /* 最終CTA */
+  .final-cta {
+    background: linear-gradient(160deg, var(--green-dark), var(--green));
+    color: #fff; text-align: center;
+  }
+  .final-cta h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .final-cta p { opacity: .9; margin-bottom: 32px; }
+
+  footer { background: #1c2420; color: #9aa8a1; text-align: center; padding: 28px 20px; font-size: 12px; }
+  .demo-note { color: #c9d4ce; margin-bottom: 6px; }
+
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .hero { padding: 56px 0; }
+    .header-cta { font-size: 12px; padding: 8px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">みどり整体院<span>MIDORI SEITAI - DEMO</span></a>
+    <a class="header-cta" href="#reserve">ご予約はこちら</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">当駅前・徒歩3分｜土日も営業</span>
+    <h1>その肩こり・腰痛、<br>「もう治らない」と<em>あきらめて</em>いませんか？</h1>
+    <p>マッサージでは戻ってしまう慢性的な痛みに、国家資格者が根本からアプローチ。お一人おひとりの体に合わせた完全オーダーメイドの施術です。</p>
+    <a class="cta-btn" href="#reserve">初回限定 2,980円で予約する</a>
+    <div class="cta-note">※通常6,600円 → 初回体験は約55%OFF・1日3名様限定</div>
+  </div>
+</div>
+
+<section class="problems">
+  <div class="inner">
+    <h2 class="section-title">こんなお悩みありませんか？</h2>
+    <div class="section-sub">PROBLEMS</div>
+    <div class="problem-list">
+      <div class="problem-item">デスクワークで夕方には肩がガチガチになる</div>
+      <div class="problem-item">朝起きた瞬間から腰が重い・痛い</div>
+      <div class="problem-item">マッサージに行っても数日で元に戻る</div>
+      <div class="problem-item">頭痛や眼精疲労が慢性化している</div>
+      <div class="problem-item">湿布や痛み止めでその場しのぎをしている</div>
+      <div class="problem-item">病院では「異常なし」と言われたが痛い</div>
+    </div>
+    <p class="problems-lead">ひとつでも当てはまる方は、<strong>みどり整体院</strong>にお任せください。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="inner">
+    <h2 class="section-title">みどり整体院が選ばれる3つの理由</h2>
+    <div class="section-sub">REASONS</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-num">REASON 01</div>
+        <h3>国家資格者による根本改善の施術</h3>
+        <p>柔道整復師の資格を持つ院長がすべての施術を担当。痛みの出ている場所だけでなく、姿勢や骨格のゆがみといった「原因」に直接アプローチします。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">REASON 02</div>
+        <h3>初回60分の丁寧なカウンセリング</h3>
+        <p>初回は検査とカウンセリングにたっぷり時間を確保。現在の状態を写真とデータでご説明し、改善までの計画を一緒に立てます。流れ作業の施術は行いません。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">REASON 03</div>
+        <h3>再発させないセルフケア指導</h3>
+        <p>施術効果を長持ちさせる自宅ストレッチや、デスクワーク時の姿勢のコツまでお伝えします。「通い続けないと不安」ではなく「卒業できる整体」が目標です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="inner">
+    <h2 class="section-title">料金のご案内</h2>
+    <div class="section-sub">PRICE</div>
+    <div class="price-cards">
+      <div class="price-card featured">
+        <div class="price-tag">＼ 初回限定・1日3名様 ／</div>
+        <h3>初回体験（検査＋施術 約60分）</h3>
+        <div class="price-old">通常 6,600円（税込）</div>
+        <div class="price-now">2,980<small>円（税込）</small></div>
+        <p>カウンセリング・姿勢分析・施術・セルフケア提案まで含むおためしコースです。</p>
+      </div>
+      <div class="price-card">
+        <h3>2回目以降（施術 約40分）</h3>
+        <div class="price-now" style="color: var(--green-dark);">6,600<small>円（税込）</small></div>
+        <p>お体の状態に合わせて最適な通院ペースをご提案します。回数券のご用意もあります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="inner">
+    <h2 class="section-title">お客様の声</h2>
+    <div class="section-sub">VOICES ※デモ用の架空の感想です</div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p>10年悩んだ肩こりが3回の施術でかなり楽になりました。原因を写真で見せながら説明してくれるので、納得して通えます。</p>
+        <div class="voice-meta">40代・女性・事務職</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p>ぎっくり腰の再発予防で通っています。教わったストレッチを続けてから、朝の腰の重さがなくなりました。</p>
+        <div class="voice-meta">50代・男性・運送業</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <p>強く揉むだけの整体とは全然違いました。体の使い方のクセまで指摘してもらえて、デスクワークの疲れ方が変わりました。</p>
+        <div class="voice-meta">30代・女性・ITエンジニア</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="inner">
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="section-sub">FAQ</div>
+    <div class="faq-list">
+      <details>
+        <summary>施術は痛くありませんか？</summary>
+        <p>バキバキ鳴らすような強い刺激の施術は行いません。お体の状態に合わせた優しい施術ですので、初めての方やご高齢の方も安心してお越しください。</p>
+      </details>
+      <details>
+        <summary>何回くらい通えば良くなりますか？</summary>
+        <p>症状や生活習慣により個人差がありますが、初回の検査結果をもとに目安の回数と期間をお伝えします。無理な回数券の勧誘は一切ありません。</p>
+      </details>
+      <details>
+        <summary>保険は使えますか？</summary>
+        <p>当院の施術は自費診療です。骨折・脱臼などの外傷が疑われる場合は、提携の医療機関をご紹介します。</p>
+      </details>
+      <details>
+        <summary>当日予約はできますか？</summary>
+        <p>空きがあれば当日でもご案内可能です。LINEまたはお電話でお気軽にお問い合わせください。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="access">
+  <div class="inner">
+    <h2 class="section-title">店舗情報・アクセス</h2>
+    <div class="section-sub">ACCESS</div>
+    <table class="access-table">
+      <tr><th>店舗名</th><td>みどり整体院（架空の店舗です）</td></tr>
+      <tr><th>住所</th><td>東京都○○区みどり町1-2-3 みどりビル2F</td></tr>
+      <tr><th>アクセス</th><td>○○線「みどり駅」東口より徒歩3分</td></tr>
+      <tr><th>営業時間</th><td>平日 10:00〜20:00 ／ 土日祝 9:00〜18:00</td></tr>
+      <tr><th>定休日</th><td>水曜日</td></tr>
+      <tr><th>お支払い</th><td>現金・各種クレジットカード・QRコード決済</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="final-cta" id="reserve">
+  <div class="inner">
+    <h2>まずは初回体験で、体の変化を実感してください</h2>
+    <p>初回限定 2,980円（通常6,600円）｜1日3名様限定｜土日も営業</p>
+    <a class="cta-btn" href="#" onclick="alert('デモサイトのため予約フォームはありません'); return false;">今すぐWebで予約する</a>
+    <div class="cta-note" style="color:#d9e7e0;">お電話でのご予約：00-0000-0000（受付 9:00〜19:00）</div>
+  </div>
+</section>
+
+<footer>
+  <div class="demo-note">※このページはポートフォリオ用のデモサイトです。店舗・人物・感想はすべて架空のものです。</div>
+  © 2026 みどり整体院（DEMO）
+</footer>
+
+</body>
+</html>

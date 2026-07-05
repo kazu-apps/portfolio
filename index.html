@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制作サンプル集｜kazu-apps</title>
+<meta name="description" content="LP制作・Webスクレイピング・GAS業務自動化の制作サンプル集です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1e2a3a;
+    --blue: #2f5496;
+    --accent: #e8842c;
+    --bg: #f7f8fa;
+    --muted: #64707d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    line-height: 1.8;
+  }
+  .hero {
+    background: linear-gradient(150deg, var(--navy), #2c3e54);
+    color: #fff;
+    padding: 72px 20px 64px;
+    text-align: center;
+  }
+  .hero h1 { font-size: clamp(24px, 4.5vw, 36px); font-weight: 900; margin-bottom: 12px; }
+  .hero p { opacity: .85; max-width: 640px; margin: 0 auto; font-size: 15px; }
+  .container { max-width: 900px; margin: -36px auto 0; padding: 0 20px 72px; }
+  .card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    box-shadow: 0 4px 24px rgba(30,42,58,.08);
+    margin-bottom: 24px;
+  }
+  .card-label {
+    display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .1em;
+    color: var(--accent); border: 1.5px solid var(--accent);
+    padding: 2px 12px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .card h2 { font-size: 20px; margin-bottom: 10px; }
+  .card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .links a {
+    display: inline-block; text-decoration: none; font-weight: 700; font-size: 14px;
+    padding: 10px 24px; border-radius: 8px; margin: 0 8px 8px 0;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: #24406f; }
+  .btn-ghost { border: 1.5px solid #d3d9e0; color: var(--navy); }
+  .btn-ghost:hover { background: #eef1f5; }
+  footer { text-align: center; padding: 28px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>制作サンプル集</h1>
+  <p>LP制作・Webスクレイピング・業務自動化（GAS）の実働サンプルです。<br>すべて実際に動作するものをご覧いただけます。</p>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <span class="card-label">SAMPLE 01</span>
+    <h2>ランディングページ制作</h2>
+    <p>架空の整体院のLPです。スマホ対応・予約導線・料金表・FAQ・アクセスまで、集客に必要な構成を1枚にまとめています。構成のご提案から公開作業まで対応します。</p>
+    <div class="links">
+      <a class="btn-primary" href="./lp-demo/">デモページを見る</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="card-label">SAMPLE 02</span>
+    <h2>Webスクレイピング＆Excelレポート自動生成</h2>
+    <p>Webサイトから情報を自動収集し、集計シート付きの整形済みExcelに変換するPythonツールです。リポジトリには実際に生成したExcelファイルを同梱しています。価格調査・リスト作成・定期収集などに対応します。</p>
+    <div class="links">
+      <a class="btn-primary" href="https://github.com/kazu-apps/portfolio/tree/main/scraping-demo">コードと成果物を見る</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="card-label">SAMPLE 03</span>
+    <h2>業務自動化（Google Apps Script）</h2>
+    <p>お問い合わせフォームの「転記・自動返信・管理者通知・日次レポート」を完全自動化するスクリプトです。Googleアカウントだけで動くため、サーバー費用・月額費用は0円です。</p>
+    <div class="links">
+      <a class="btn-primary" href="https://github.com/kazu-apps/portfolio/tree/main/gas-automation-demo">コードと導入手順を見る</a>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <h2 style="font-size:17px;">お仕事のご依頼</h2>
+    <p style="margin-bottom:0;">クラウドワークス・ランサーズ・ココナラにてご相談を受け付けています。<br>「こんなことできる？」の段階でもお気軽にどうぞ。</p>
+  </div>
+
+</div>
+
+<footer>© 2026 kazu-apps｜このサイトのデモに登場する店舗・人物はすべて架空のものです。</footer>
+
+</body>
+</html>
