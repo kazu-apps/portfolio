@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hair salon Lumo｜マンツーマン施術の隠れ家サロン（デモサイト）</title>
+<meta name="description" content="完全マンツーマン施術・ダメージレスカラーの美容室。初回20%OFF。※これはポートフォリオ用のデモサイトです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --base: #faf6f2;
+    --panel: #ffffff;
+    --rose: #c98a8a;
+    --rose-dark: #b06f6f;
+    --brown: #4a3f3a;
+    --muted: #96897f;
+    --line: #eaded4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Noto Sans JP", sans-serif; background: var(--base); color: var(--brown); line-height: 1.9; }
+  .en { font-family: "Cormorant Garamond", serif; font-style: italic; }
+  .inner { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 76px 0; }
+  .section-title { text-align: center; font-size: 26px; font-weight: 900; letter-spacing: .14em; margin-bottom: 6px; }
+  .section-sub { text-align: center; color: var(--rose); font-size: 15px; letter-spacing: .25em; margin-bottom: 48px; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,242,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .header-inner { max-width: 960px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: "Cormorant Garamond", serif; font-size: 24px; color: var(--brown); text-decoration: none; letter-spacing: .06em; }
+  .logo small { font-family: "Noto Sans JP", sans-serif; font-size: 10px; color: var(--muted); display: block; letter-spacing: .3em; }
+  .header-cta { background: var(--rose); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .header-cta:hover { background: var(--rose-dark); }
+
+  .hero { padding: 96px 0 80px; text-align: center;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201,138,138,.16), transparent),
+      radial-gradient(ellipse 50% 40% at 90% 20%, rgba(201,138,138,.12), transparent); }
+  .hero-kicker { color: var(--rose); letter-spacing: .3em; font-size: 13px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.6; letter-spacing: .06em; margin-bottom: 18px; }
+  .hero h1 em { font-style: normal; color: var(--rose); }
+  .hero p { color: var(--muted); max-width: 540px; margin: 0 auto 32px; }
+  .cta-btn { display: inline-block; background: var(--rose); color: #fff; text-decoration: none; font-size: 17px; font-weight: 900; padding: 17px 46px; border-radius: 999px; box-shadow: 0 6px 22px rgba(201,138,138,.35); transition: transform .15s, background .2s; }
+  .cta-btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
+  .cta-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  .features { background: var(--panel); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .feature-card { border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px; background: var(--base); }
+  .feature-num { color: var(--rose); font-family: "Cormorant Garamond", serif; font-size: 28px; line-height: 1; }
+  .feature-card h3 { font-size: 18px; margin: 10px 0 12px; }
+  .feature-card p { font-size: 14px; color: var(--muted); }
+
+  .menu-table { max-width: 640px; margin: 0 auto; width: 100%; border-collapse: collapse; }
+  .menu-table th, .menu-table td { padding: 16px 12px; border-bottom: 1px solid var(--line); font-size: 14px; text-align: left; }
+  .menu-table td.price { text-align: right; font-weight: 700; color: var(--rose-dark); white-space: nowrap; }
+  .menu-table small { display: block; color: var(--muted); font-size: 12px; }
+  .menu-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 18px; }
+
+  .coupon { background: linear-gradient(150deg, var(--rose), var(--rose-dark)); color: #fff; text-align: center; border-radius: 20px; padding: 44px 24px; }
+  .coupon h3 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+  .coupon .big { font-size: 46px; font-weight: 900; line-height: 1.2; }
+  .coupon p { opacity: .9; font-size: 13px; margin-top: 10px; }
+
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .voice-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .voice-stars { color: var(--rose); letter-spacing: 2px; margin-bottom: 10px; }
+  .voice-card p { font-size: 14px; margin-bottom: 12px; }
+  .voice-meta { font-size: 12px; color: var(--muted); }
+
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+  summary { font-weight: 700; cursor: pointer; list-style: none; position: relative; padding-right: 28px; }
+  summary::after { content: "＋"; position: absolute; right: 0; top: 0; color: var(--rose); font-weight: 900; }
+  details[open] summary::after { content: "－"; }
+  details p { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+  .info { background: var(--panel); }
+  .info-table { max-width: 620px; margin: 0 auto; width: 100%; border-collapse: collapse; }
+  .info-table th, .info-table td { padding: 14px 12px; border-bottom: 1px solid var(--line); font-size: 14px; text-align: left; }
+  .info-table th { width: 30%; color: var(--rose-dark); }
+
+  .final-cta { text-align: center; }
+  .final-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
+  .final-cta p { color: var(--muted); margin-bottom: 28px; }
+
+  footer { background: #3d3430; color: #b8aca3; text-align: center; padding: 28px 20px; font-size: 12px; }
+  .demo-note { color: #d8cdc5; margin-bottom: 6px; }
+
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .hero { padding: 64px 0 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">hair salon Lumo<small>LUMO - DEMO</small></a>
+    <a class="header-cta" href="#reserve">ご予約</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="inner">
+    <div class="hero-kicker">PRIVATE SALON ── 駅から徒歩5分</div>
+    <h1>ようやく見つかる、<br><em>「任せられる」</em>ひとり。</h1>
+    <p>カウンセリングから仕上げまで、担当スタイリストがマンツーマンで。髪質と骨格に合わせた再現性のあるスタイルを、ダメージレスにお作りします。</p>
+    <a class="cta-btn" href="#reserve">初回20%OFFで予約する</a>
+    <div class="cta-note">完全予約制／お子さま連れOK（半個室あり）</div>
+  </div>
+</div>
+
+<section class="features">
+  <div class="inner">
+    <h2 class="section-title">Lumoが選ばれる理由</h2>
+    <div class="section-sub en">Reason</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-num en">01</div>
+        <h3>完全マンツーマン施術</h3>
+        <p>シャンプーからブローまで、途中で担当が変わりません。会話のペースもお客様に合わせます。静かに過ごしたい方はカルテにご記入ください。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num en">02</div>
+        <h3>ダメージレスカラー</h3>
+        <p>ケア剤を調合したオリジナルカラーで、繰り返し染めても手触りが変わりにくい施術を。白髪ぼかしやハイライトのご相談も得意です。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num en">03</div>
+        <h3>朝5分で決まる再現性</h3>
+        <p>「サロン帰りだけキレイ」にしません。骨格・生えぐせ・普段のセット時間を伺った上で、自宅で再現できるカットラインを設計します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <h2 class="section-title">メニュー</h2>
+    <div class="section-sub en">Menu</div>
+    <table class="menu-table">
+      <tr><th>カット<small>カウンセリング・シャンプー・ブロー込み</small></th><td class="price">5,500円</td></tr>
+      <tr><th>カット＋ダメージレスカラー<small>リタッチは-1,100円</small></th><td class="price">12,100円</td></tr>
+      <tr><th>カット＋パーマ</th><td class="price">13,200円</td></tr>
+      <tr><th>髪質改善トリートメント<small>単品でも施術できます</small></th><td class="price">8,800円</td></tr>
+      <tr><th>ヘッドスパ（30分）</th><td class="price">4,400円</td></tr>
+    </table>
+    <p class="menu-note">※価格はすべて税込のデモ表記です。</p>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="coupon">
+      <h3>はじめての方限定</h3>
+      <div class="big">全メニュー 20%OFF</div>
+      <p>ご予約時に「HPを見た」とお伝えください。／他クーポンとの併用不可・デモ表記</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <h2 class="section-title">お客様の声</h2>
+    <div class="section-sub en">Voice ※デモ用の架空の感想です</div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p>初めて「朝のセットが楽になった」と実感できたカットでした。乾かすだけでまとまります。</p>
+        <div class="voice-meta">30代・女性・会社員</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p>子連れでも気兼ねなく通える半個室がありがたい。カラーの持ちも今までのサロンで一番いいです。</p>
+        <div class="voice-meta">40代・女性</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <p>会話の距離感が絶妙で、リラックスして過ごせました。仕上がりの説明も丁寧で安心できます。</p>
+        <div class="voice-meta">20代・男性</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="section-sub en">FAQ</div>
+    <div class="faq-list">
+      <details>
+        <summary>当日予約はできますか？</summary>
+        <p>空きがあればご案内可能です。Web予約カレンダーが最新の空き状況です。お急ぎの場合はお電話ください。</p>
+      </details>
+      <details>
+        <summary>子どもを連れて行っても大丈夫ですか？</summary>
+        <p>半個室のお席をご用意しています。ご予約時に「お子さま連れ」とお伝えいただければ、ベビーカーのまま入れるお席を確保します。</p>
+      </details>
+      <details>
+        <summary>髪の悩み相談だけでも行っていいですか？</summary>
+        <p>もちろんです。カウンセリングのみ（無料・20分）のご予約も承っています。無理な施術のご提案はいたしません。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="inner">
+    <h2 class="section-title">サロン情報</h2>
+    <div class="section-sub en">Information</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>hair salon Lumo（架空の店舗です）</td></tr>
+      <tr><th>住所</th><td>東京都○○区ひかり町2-3-4 ルモビル2F</td></tr>
+      <tr><th>アクセス</th><td>○○線「ひかり町駅」南口より徒歩5分</td></tr>
+      <tr><th>営業時間</th><td>10:00〜19:00（最終受付 カット18:00／カラー17:00）</td></tr>
+      <tr><th>定休日</th><td>火曜日・第2水曜日</td></tr>
+      <tr><th>お支払い</th><td>現金・各種クレジットカード・QRコード決済</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="final-cta" id="reserve">
+  <div class="inner">
+    <h2>まずは、髪の悩みをお聞かせください</h2>
+    <p>初回20%OFF／無料カウンセリングのみのご予約も歓迎です</p>
+    <a class="cta-btn" href="#" onclick="alert('デモサイトのため予約フォームはありません'); return false;">Web予約カレンダーを見る</a>
+    <div class="cta-note">お電話でのご予約：00-0000-0000（受付 9:30〜18:30）</div>
+  </div>
+</section>
+
+<footer>
+  <div class="demo-note">※このページはポートフォリオ用のデモサイトです。店舗・人物・感想はすべて架空のものです。</div>
+  © 2026 hair salon Lumo（DEMO）
+</footer>
+
+</body>
+</html>
