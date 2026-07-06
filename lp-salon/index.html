@@ -7,13 +7,14 @@
 <meta name="description" content="完全マンツーマン施術・ダメージレスカラーの美容室。初回20%OFF。※これはポートフォリオ用のデモサイトです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
     --base: #faf6f2;
     --panel: #ffffff;
     --rose: #c98a8a;
-    --rose-dark: #b06f6f;
+    --rose-deep: #b06f6f;
+    --beige: #e8d6c7;
     --brown: #4a3f3a;
     --muted: #96897f;
     --line: #eaded4;
@@ -21,48 +22,64 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: "Noto Sans JP", sans-serif; background: var(--base); color: var(--brown); line-height: 1.9; }
-  .en { font-family: "Cormorant Garamond", serif; font-style: italic; }
-  .inner { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 76px 0; }
+  .en { font-family: "Playfair Display", serif; font-style: italic; }
+  .inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 84px 0; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,242,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .header-inner { max-width: 1000px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: "Playfair Display", serif; font-style: italic; font-size: 24px; color: var(--brown); text-decoration: none; }
+  .header-link { color: var(--rose-deep); text-decoration: none; font-weight: 700; font-size: 14px; border-bottom: 2px solid var(--rose-deep); padding-bottom: 2px; }
+
+  /* ===== 分割ヒーロー ===== */
+  .hero { position: relative; min-height: 88vh; display: grid; grid-template-columns: 58% 42%; align-items: center; overflow: hidden; }
+  .hero-left { padding: 60px 24px 60px clamp(56px, 8vw, 110px); position: relative; }
+  .side-label { position: absolute; left: 18px; top: 90px; writing-mode: vertical-rl; font-size: 11px; letter-spacing: .5em; color: var(--muted); }
+  .hero-logo { font-family: "Playfair Display", serif; font-style: italic; font-weight: 600; font-size: clamp(84px, 12vw, 150px); line-height: 1.05; color: var(--brown); }
+  .hero-copy { font-size: clamp(24px, 3vw, 32px); font-weight: 900; line-height: 1.7; margin: 26px 0 18px; }
+  .hero-copy em { font-style: normal; color: var(--rose-deep); }
+  .hero-sub { color: var(--muted); font-size: 15px; margin-bottom: 34px; }
+  .cta-line { display: inline-block; color: var(--rose-deep); font-weight: 900; font-size: 19px; text-decoration: none; border-bottom: 2px solid var(--rose-deep); padding-bottom: 4px; transition: opacity .2s; }
+  .cta-line:hover { opacity: .65; }
+  .cta-line::after { content: "  →"; }
+  .hero-note { font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+  .hero-right { position: relative; height: 100%; min-height: 520px; }
+  .blk-rose { position: absolute; right: 10%; top: 14%; width: 62%; height: 66%; background: var(--rose); }
+  .blk-beige { position: absolute; right: 46%; top: 42%; width: 38%; height: 40%; background: var(--beige); }
+  .blk-circle { position: absolute; right: 4%; top: 6%; width: 150px; height: 150px; border-radius: 50%; background: var(--brown); }
+
+  /* ===== 理由：大数字エディトリアル ===== */
+  .reasons .row { position: relative; padding: 60px 0 44px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr; }
+  .reasons .row .big { position: absolute; top: 16px; font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(110px, 16vw, 170px); line-height: 1; color: rgba(201,138,138,.18); user-select: none; }
+  .reasons .row:nth-child(odd) .big { right: 0; }
+  .reasons .row:nth-child(even) .big { left: 0; }
+  .reasons .row .body { max-width: 54ch; position: relative; }
+  .reasons .row:nth-child(even) .body { margin-left: auto; text-align: left; }
+  .reasons h3 { font-size: 22px; font-weight: 900; margin-bottom: 12px; }
+  .reasons p { color: var(--muted); font-size: 15px; }
+
   .section-title { text-align: center; font-size: 26px; font-weight: 900; letter-spacing: .14em; margin-bottom: 6px; }
-  .section-sub { text-align: center; color: var(--rose); font-size: 15px; letter-spacing: .25em; margin-bottom: 48px; }
+  .section-sub { text-align: center; color: var(--rose); font-family: "Playfair Display", serif; font-style: italic; font-size: 17px; letter-spacing: .12em; margin-bottom: 48px; }
 
-  header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,242,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-  .header-inner { max-width: 960px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: "Cormorant Garamond", serif; font-size: 24px; color: var(--brown); text-decoration: none; letter-spacing: .06em; }
-  .logo small { font-family: "Noto Sans JP", sans-serif; font-size: 10px; color: var(--muted); display: block; letter-spacing: .3em; }
-  .header-cta { background: var(--rose); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; }
-  .header-cta:hover { background: var(--rose-dark); }
-
-  .hero { padding: 96px 0 80px; text-align: center;
-    background:
-      radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201,138,138,.16), transparent),
-      radial-gradient(ellipse 50% 40% at 90% 20%, rgba(201,138,138,.12), transparent); }
-  .hero-kicker { color: var(--rose); letter-spacing: .3em; font-size: 13px; margin-bottom: 16px; }
-  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.6; letter-spacing: .06em; margin-bottom: 18px; }
-  .hero h1 em { font-style: normal; color: var(--rose); }
-  .hero p { color: var(--muted); max-width: 540px; margin: 0 auto 32px; }
-  .cta-btn { display: inline-block; background: var(--rose); color: #fff; text-decoration: none; font-size: 17px; font-weight: 900; padding: 17px 46px; border-radius: 999px; box-shadow: 0 6px 22px rgba(201,138,138,.35); transition: transform .15s, background .2s; }
-  .cta-btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
-  .cta-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
-
-  .features { background: var(--panel); }
-  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-  .feature-card { border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px; background: var(--base); }
-  .feature-num { color: var(--rose); font-family: "Cormorant Garamond", serif; font-size: 28px; line-height: 1; }
-  .feature-card h3 { font-size: 18px; margin: 10px 0 12px; }
-  .feature-card p { font-size: 14px; color: var(--muted); }
-
-  .menu-table { max-width: 640px; margin: 0 auto; width: 100%; border-collapse: collapse; }
-  .menu-table th, .menu-table td { padding: 16px 12px; border-bottom: 1px solid var(--line); font-size: 14px; text-align: left; }
-  .menu-table td.price { text-align: right; font-weight: 700; color: var(--rose-dark); white-space: nowrap; }
-  .menu-table small { display: block; color: var(--muted); font-size: 12px; }
+  /* ===== 料金：罫線ミニマル ===== */
+  .price-list { max-width: 640px; margin: 0 auto; }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 4px; border-bottom: 1px solid var(--line); }
+  .price-row .name { font-weight: 700; letter-spacing: .08em; }
+  .price-row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; letter-spacing: 0; }
+  .price-row .dots { flex: 1; margin: 0 14px; border-bottom: 1px dotted #d8c8bb; transform: translateY(-6px); }
+  .price-row .price { font-family: "Playfair Display", serif; font-size: 22px; color: var(--rose-deep); white-space: nowrap; }
   .menu-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 18px; }
 
-  .coupon { background: linear-gradient(150deg, var(--rose), var(--rose-dark)); color: #fff; text-align: center; border-radius: 20px; padding: 44px 24px; }
-  .coupon h3 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
-  .coupon .big { font-size: 46px; font-weight: 900; line-height: 1.2; }
-  .coupon p { opacity: .9; font-size: 13px; margin-top: 10px; }
+  /* ===== チケット風クーポン ===== */
+  .ticket { position: relative; max-width: 720px; margin: 0 auto; background: var(--panel); border: 2px dashed var(--rose); border-radius: 16px; padding: 44px 24px; text-align: center; }
+  .ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 36px; height: 36px; border-radius: 50%; background: var(--base); border: 2px dashed var(--rose); transform: translateY(-50%); }
+  .ticket::before { left: -20px; border-left-color: transparent; }
+  .ticket::after { right: -20px; border-right-color: transparent; }
+  .ticket h3 { font-size: 15px; letter-spacing: .3em; color: var(--rose-deep); margin-bottom: 8px; }
+  .ticket .big { font-size: clamp(34px, 6vw, 48px); font-weight: 900; line-height: 1.3; }
+  .ticket .big span { color: var(--rose-deep); }
+  .ticket p { color: var(--muted); font-size: 12px; margin-top: 10px; }
 
   .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
   .voice-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
@@ -80,7 +97,7 @@
   .info { background: var(--panel); }
   .info-table { max-width: 620px; margin: 0 auto; width: 100%; border-collapse: collapse; }
   .info-table th, .info-table td { padding: 14px 12px; border-bottom: 1px solid var(--line); font-size: 14px; text-align: left; }
-  .info-table th { width: 30%; color: var(--rose-dark); }
+  .info-table th { width: 30%; color: var(--rose-deep); }
 
   .final-cta { text-align: center; }
   .final-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
@@ -89,9 +106,14 @@
   footer { background: #3d3430; color: #b8aca3; text-align: center; padding: 28px 20px; font-size: 12px; }
   .demo-note { color: #d8cdc5; margin-bottom: 6px; }
 
-  @media (max-width: 640px) {
+  @media (max-width: 780px) {
     section { padding: 56px 0; }
-    .hero { padding: 64px 0 56px; }
+    .hero { grid-template-columns: 1fr; min-height: unset; }
+    .hero-left { padding: 72px 20px 40px 56px; }
+    .hero-right { min-height: 340px; }
+    .blk-circle { width: 100px; height: 100px; }
+    .reasons .row .big { font-size: 100px; opacity: .7; }
+    .reasons .row:nth-child(even) .body { margin-left: 0; }
   }
 </style>
 </head>
@@ -99,38 +121,48 @@
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="#">hair salon Lumo<small>LUMO - DEMO</small></a>
-    <a class="header-cta" href="#reserve">ご予約</a>
+    <a class="logo" href="#">Lumo.</a>
+    <a class="header-link" href="#reserve">ご予約 →</a>
   </div>
 </header>
 
 <div class="hero">
-  <div class="inner">
-    <div class="hero-kicker">PRIVATE SALON ── 駅から徒歩5分</div>
-    <h1>ようやく見つかる、<br><em>「任せられる」</em>ひとり。</h1>
-    <p>カウンセリングから仕上げまで、担当スタイリストがマンツーマンで。髪質と骨格に合わせた再現性のあるスタイルを、ダメージレスにお作りします。</p>
-    <a class="cta-btn" href="#reserve">初回20%OFFで予約する</a>
-    <div class="cta-note">完全予約制／お子さま連れOK（半個室あり）</div>
+  <div class="hero-left">
+    <div class="side-label">PRIVATE HAIR SALON — TOKYO</div>
+    <div class="hero-logo">Lumo.</div>
+    <div class="hero-copy">ようやく見つかる、<br><em>「任せられる」</em>ひとり。</div>
+    <div class="hero-sub">完全マンツーマン施術のプライベートサロン<br>カット・ダメージレスカラー・髪質改善</div>
+    <a class="cta-line" href="#reserve">初回20%OFFで予約する</a>
+    <div class="hero-note">完全予約制／お子さま連れOK（半個室あり）</div>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <div class="blk-rose"></div>
+    <div class="blk-beige"></div>
+    <div class="blk-circle"></div>
   </div>
 </div>
 
-<section class="features">
+<section class="reasons">
   <div class="inner">
     <h2 class="section-title">Lumoが選ばれる理由</h2>
-    <div class="section-sub en">Reason</div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-num en">01</div>
+    <div class="section-sub">Reason</div>
+    <div class="row">
+      <div class="big">01</div>
+      <div class="body">
         <h3>完全マンツーマン施術</h3>
         <p>シャンプーからブローまで、途中で担当が変わりません。会話のペースもお客様に合わせます。静かに過ごしたい方はカルテにご記入ください。</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-num en">02</div>
+    </div>
+    <div class="row">
+      <div class="big">02</div>
+      <div class="body">
         <h3>ダメージレスカラー</h3>
         <p>ケア剤を調合したオリジナルカラーで、繰り返し染めても手触りが変わりにくい施術を。白髪ぼかしやハイライトのご相談も得意です。</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-num en">03</div>
+    </div>
+    <div class="row">
+      <div class="big">03</div>
+      <div class="body">
         <h3>朝5分で決まる再現性</h3>
         <p>「サロン帰りだけキレイ」にしません。骨格・生えぐせ・普段のセット時間を伺った上で、自宅で再現できるカットラインを設計します。</p>
       </div>
@@ -141,23 +173,23 @@
 <section>
   <div class="inner">
     <h2 class="section-title">メニュー</h2>
-    <div class="section-sub en">Menu</div>
-    <table class="menu-table">
-      <tr><th>カット<small>カウンセリング・シャンプー・ブロー込み</small></th><td class="price">5,500円</td></tr>
-      <tr><th>カット＋ダメージレスカラー<small>リタッチは-1,100円</small></th><td class="price">12,100円</td></tr>
-      <tr><th>カット＋パーマ</th><td class="price">13,200円</td></tr>
-      <tr><th>髪質改善トリートメント<small>単品でも施術できます</small></th><td class="price">8,800円</td></tr>
-      <tr><th>ヘッドスパ（30分）</th><td class="price">4,400円</td></tr>
-    </table>
+    <div class="section-sub">Menu</div>
+    <div class="price-list">
+      <div class="price-row"><span class="name">カット<small>カウンセリング・シャンプー・ブロー込み</small></span><span class="dots"></span><span class="price">¥5,500</span></div>
+      <div class="price-row"><span class="name">カット＋ダメージレスカラー<small>リタッチは -¥1,100</small></span><span class="dots"></span><span class="price">¥12,100</span></div>
+      <div class="price-row"><span class="name">カット＋パーマ</span><span class="dots"></span><span class="price">¥13,200</span></div>
+      <div class="price-row"><span class="name">髪質改善トリートメント<small>単品でも施術できます</small></span><span class="dots"></span><span class="price">¥8,800</span></div>
+      <div class="price-row"><span class="name">ヘッドスパ（30分）</span><span class="dots"></span><span class="price">¥4,400</span></div>
+    </div>
     <p class="menu-note">※価格はすべて税込のデモ表記です。</p>
   </div>
 </section>
 
 <section>
   <div class="inner">
-    <div class="coupon">
-      <h3>はじめての方限定</h3>
-      <div class="big">全メニュー 20%OFF</div>
+    <div class="ticket">
+      <h3>FIRST VISIT TICKET</h3>
+      <div class="big">はじめての方 <span>全メニュー20%OFF</span></div>
       <p>ご予約時に「HPを見た」とお伝えください。／他クーポンとの併用不可・デモ表記</p>
     </div>
   </div>
@@ -166,7 +198,7 @@
 <section>
   <div class="inner">
     <h2 class="section-title">お客様の声</h2>
-    <div class="section-sub en">Voice ※デモ用の架空の感想です</div>
+    <div class="section-sub">Voice ※デモ用の架空の感想です</div>
     <div class="voice-grid">
       <div class="voice-card">
         <div class="voice-stars">★★★★★</div>
@@ -190,7 +222,7 @@
 <section>
   <div class="inner">
     <h2 class="section-title">よくあるご質問</h2>
-    <div class="section-sub en">FAQ</div>
+    <div class="section-sub">FAQ</div>
     <div class="faq-list">
       <details>
         <summary>当日予約はできますか？</summary>
@@ -211,7 +243,7 @@
 <section class="info">
   <div class="inner">
     <h2 class="section-title">サロン情報</h2>
-    <div class="section-sub en">Information</div>
+    <div class="section-sub">Information</div>
     <table class="info-table">
       <tr><th>店名</th><td>hair salon Lumo（架空の店舗です）</td></tr>
       <tr><th>住所</th><td>東京都○○区ひかり町2-3-4 ルモビル2F</td></tr>
@@ -227,8 +259,8 @@
   <div class="inner">
     <h2>まずは、髪の悩みをお聞かせください</h2>
     <p>初回20%OFF／無料カウンセリングのみのご予約も歓迎です</p>
-    <a class="cta-btn" href="#" onclick="alert('デモサイトのため予約フォームはありません'); return false;">Web予約カレンダーを見る</a>
-    <div class="cta-note">お電話でのご予約：00-0000-0000（受付 9:30〜18:30）</div>
+    <a class="cta-line" href="#" onclick="alert('デモサイトのため予約フォームはありません'); return false;">Web予約カレンダーを見る</a>
+    <div class="hero-note">お電話でのご予約:00-0000-0000（受付 9:30〜18:30）</div>
   </div>
 </section>
 
